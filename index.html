@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EASYCOMEX | Gestión de comercio exterior</title>
+<style>
+:root{--navy:#10243b;--blue:#1769aa;--cyan:#23b6c9;--bg:#f3f6fa;--card:#fff;--text:#1d2939;--muted:#667085;--line:#e4eaf1;--green:#16845b;--red:#c43d4b;--shadow:0 8px 24px rgba(16,36,59,.07)}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--text)}button,input,select,textarea{font:inherit}button{cursor:pointer}
+.layout{min-height:100vh;display:grid;grid-template-columns:250px 1fr}.sidebar{background:var(--navy);color:#fff;padding:26px 16px;display:flex;flex-direction:column;gap:26px}.brand{display:flex;align-items:center;gap:11px;padding:0 10px}.brand-mark{width:42px;height:42px;border-radius:13px;background:linear-gradient(135deg,var(--cyan),#2674d9);display:grid;place-items:center;font-weight:900;font-size:19px}.brand-name{font-size:20px;font-weight:850;letter-spacing:.5px}.brand small{display:block;color:#a9bfd2;font-size:11px;margin-top:3px;letter-spacing:1.3px}.nav-label{color:#8da5bc;font-size:10px;font-weight:700;letter-spacing:1.5px;padding:0 12px;margin-bottom:-14px}.nav{display:grid;gap:7px}.nav button{border:0;background:transparent;color:#c4d2df;padding:13px 14px;text-align:left;border-radius:10px;display:flex;gap:12px;align-items:center;font-size:14px}.nav button:hover,.nav button.active{background:#213b56;color:white}.nav .ico{width:20px;text-align:center;font-size:17px}.sidebar-foot{margin-top:auto;padding:14px;color:#8da5bc;font-size:11px;line-height:1.6;border-top:1px solid #2b4055}
+main{min-width:0}.topbar{height:78px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 34px}.crumb{font-size:13px;color:var(--muted)}.crumb b{color:var(--text)}.profile{display:flex;align-items:center;gap:10px;font-size:13px}.avatar{width:36px;height:36px;border-radius:50%;background:#d9eff7;color:#1769aa;display:grid;place-items:center;font-weight:800}.content{padding:30px 34px;max-width:1450px;margin:auto}.page-head{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;margin-bottom:24px}.eyebrow{font-size:11px;letter-spacing:1.5px;font-weight:800;color:var(--blue);text-transform:uppercase}.page-head h1{margin:7px 0 7px;font-size:28px;letter-spacing:-.6px}.page-head p{margin:0;color:var(--muted);font-size:14px}.btn{border:0;border-radius:9px;padding:11px 15px;font-weight:700;font-size:13px;display:inline-flex;align-items:center;gap:8px}.btn-primary{background:var(--blue);color:white}.btn-primary:hover{background:#0f568e}.btn-light{background:#edf4fa;color:var(--blue)}.btn-danger{background:#fff0f1;color:var(--red)}.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-bottom:22px}.stat,.panel{background:var(--card);border:1px solid var(--line);border-radius:15px;box-shadow:var(--shadow)}.stat{padding:19px 20px;display:flex;align-items:center;gap:14px}.stat-icon{width:44px;height:44px;border-radius:12px;background:#eaf5fb;display:grid;place-items:center;font-size:21px}.stat small{color:var(--muted);font-size:12px}.stat strong{display:block;font-size:23px;margin-top:5px}.panel{padding:23px;margin-bottom:20px}.panel-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px}.panel-head h2{font-size:17px;margin:0}.panel-head p{font-size:12px;color:var(--muted);margin:5px 0 0}.section{display:none}.section.active{display:block}.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.field{display:flex;flex-direction:column;gap:7px;min-width:0}.field.full{grid-column:1/-1}.field label{font-size:12px;font-weight:700;color:#475467}.field input,.field select,.field textarea{width:100%;border:1px solid #d7e0e9;border-radius:8px;padding:11px 12px;background:#fff;color:var(--text);outline:none;min-width:0}.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px #1769aa18}.hint{font-size:11px;color:var(--muted);line-height:1.5}.form-actions{display:flex;gap:10px;justify-content:flex-end;margin-top:20px;flex-wrap:wrap}.results{background:#f6f9fc;border:1px solid var(--line);border-radius:12px;padding:18px}.result-line{display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-bottom:1px solid var(--line);font-size:13px}.result-line:last-child{border-bottom:0}.result-line span{color:var(--muted)}.result-line strong{text-align:right}.result-total{margin-top:10px;background:var(--navy);color:white;padding:16px;border-radius:10px;display:flex;justify-content:space-between;align-items:center;gap:12px}.result-total small{color:#c4d2df}.result-total strong{font-size:22px}.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse;min-width:620px}th,td{text-align:left;padding:14px 12px;border-bottom:1px solid var(--line);font-size:13px}th{font-size:11px;text-transform:uppercase;letter-spacing:.7px;color:var(--muted);background:#f8fafc}td{vertical-align:middle}.pill{display:inline-block;background:#e8f7ef;color:var(--green);font-size:11px;font-weight:800;padding:5px 9px;border-radius:99px}.actions{display:flex;gap:6px}.icon-btn{border:1px solid var(--line);background:white;border-radius:7px;padding:7px 9px;color:#475467}.empty{text-align:center;padding:35px;color:var(--muted);font-size:13px}.doc-list{display:grid;gap:12px}.doc-item{border:1px solid var(--line);border-radius:11px;padding:15px;display:flex;align-items:center;gap:13px}.doc-icon{width:42px;height:42px;flex-shrink:0;border-radius:10px;background:#edf4fa;display:grid;place-items:center;font-size:20px}.doc-info{flex:1;min-width:0}.doc-info strong{font-size:13px}.doc-info p{font-size:12px;color:var(--muted);margin:5px 0 0}.doc-item input[type=file]{max-width:190px;font-size:11px}.notice{background:#fff8e8;border:1px solid #f1dfb1;color:#795a15;padding:12px 14px;border-radius:9px;font-size:12px;line-height:1.5;margin-bottom:16px}.search{max-width:280px}.search input{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:8px}.mobile-menu{display:none}.toast{position:fixed;right:22px;bottom:22px;background:var(--navy);color:#fff;padding:13px 18px;border-radius:10px;box-shadow:var(--shadow);font-size:13px;z-index:10;display:none}
+@media(max-width:900px){.layout{grid-template-columns:1fr}.sidebar{padding:14px;gap:15px}.brand{padding:0 5px}.nav{grid-template-columns:repeat(2,minmax(0,1fr))}.nav-label,.sidebar-foot{display:none}.topbar{height:60px;padding:0 20px}.content{padding:22px 18px}.grid-2{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.page-head h1{font-size:24px}}
+@media(max-width:560px){.stats{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.page-head{flex-direction:column}.panel{padding:17px}.doc-item{flex-wrap:wrap}.doc-item input[type=file]{max-width:100%;width:100%}.profile span{display:none}}
+</style>
+</head>
+<body>
+<div class="layout">
+<aside class="sidebar">
+  <div class="brand"><div class="brand-mark">EC</div><div><div class="brand-name">EASYCOMEX</div><small>COMERCIO EXTERIOR</small></div></div>
+  <div class="nav-label">MENÚ PRINCIPAL</div>
+  <nav class="nav">
+    <button class="active" data-page="inicio"><span class="ico">⌂</span>Inicio</button>
+    <button data-page="calculadora"><span class="ico">▦</span>Calculadora de costos</button>
+    <button data-page="documentos"><span class="ico">▤</span>Documentos</button>
+    <button data-page="proveedores"><span class="ico">♙</span>Proveedores</button>
+  </nav>
+  <div class="sidebar-foot">EASYCOMEX<br>Herramientas para tus operaciones de importación.<br><br>Versión demostrativa 1.0</div>
+</aside>
+<main>
+  <header class="topbar"><div class="crumb">EASYCOMEX / <b id="crumb">Inicio</b></div><div class="profile"><div class="avatar">EC</div><span>Panel de gestión</span></div></header>
+  <div class="content">
+    <section class="section active" id="inicio">
+      <div class="page-head"><div><div class="eyebrow">CENTRO DE OPERACIONES</div><h1>Bienvenido a EASYCOMEX</h1><p>Administra tus proveedores, documentos y costos de importación desde un solo lugar.</p></div><button class="btn btn-primary" onclick="showPage('calculadora')">＋ Calcular importación</button></div>
+      <div class="stats">
+        <div class="stat"><div class="stat-icon">♙</div><div><small>Proveedores registrados</small><strong id="stat-proveedores">0</strong></div></div>
+        <div class="stat"><div class="stat-icon">▤</div><div><small>Documentos en lista</small><strong id="stat-documentos">6</strong></div></div>
+        <div class="stat"><div class="stat-icon">▦</div><div><small>Último CIF calculado</small><strong id="stat-cif">$0</strong></div></div>
+      </div>
+      <div class="panel"><div class="panel-head"><div><h2>Accesos rápidos</h2><p>Selecciona el módulo que necesitas.</p></div></div><div class="grid-2">
+        <div class="doc-item"><div class="doc-icon">▦</div><div class="doc-info"><strong>Calculadora de costos</strong><p>Calcula valor aduanero, arancel e IVA estimado.</p></div><button class="btn btn-light" onclick="showPage('calculadora')">Abrir</button></div>
+        <div class="doc-item"><div class="doc-icon">♙</div><div class="doc-info"><strong>Proveedores</strong><p>Guarda los datos de tus empresas proveedoras.</p></div><button class="btn btn-light" onclick="showPage('proveedores')">Abrir</button></div>
+        <div class="doc-item"><div class="doc-icon">▤</div><div class="doc-info"><strong>Documentos</strong><p>Consulta los documentos requeridos para tu operación.</p></div><button class="btn btn-light" onclick="showPage('documentos')">Abrir</button></div>
+      </div></div>
+    </section>
+
+    <section class="section" id="calculadora">
+      <div class="page-head"><div><div class="eyebrow">LIQUIDACIÓN DE IMPORTACIÓN</div><h1>Calculadora de costos</h1><p>Ingresa los valores de la operación para obtener una liquidación estimada.</p></div></div>
+      <div class="notice">Esta calculadora es una estimación de referencia. Los tributos reales dependen de la subpartida arancelaria, acuerdos comerciales, origen y reglas vigentes de la DIAN. Verifica la base gravable aplicable antes de tomar decisiones.</div>
+      <div class="grid-2">
+        <div class="panel"><div class="panel-head"><div><h2>Datos de la importación</h2><p>Ingresa valores en la moneda indicada.</p></div></div>
+          <form id="calc-form"><div class="form-grid">
+            <div class="field"><label for="fob">Valor FOB (USD)</label><input id="fob" type="number" min="0" step="0.01" value="1000" required></div>
+            <div class="field"><label for="seguro">Seguro (USD)</label><input id="seguro" type="number" min="0" step="0.01" value="30" required></div>
+            <div class="field"><label for="flete">Flete (USD)</label><input id="flete" type="number" min="0" step="0.01" value="120" required></div>
+            <div class="field"><label for="otros">Otros gastos incluidos (USD)</label><input id="otros" type="number" min="0" step="0.01" value="0" required></div>
+            <div class="field"><label for="trm">TRM / tasa de cambio (COP por USD)</label><input id="trm" type="number" min="0.01" step="0.01" value="4000" required></div>
+            <div class="field"><label for="arancel">Arancel (%)</label><input id="arancel" type="number" min="0" max="100" step="0.01" value="10" required></div>
+          </div><div class="form-actions"><button type="reset" class="btn btn-light">Restablecer</button><button class="btn btn-primary" type="submit">Calcular liquidación →</button></div></form>
+        </div>
+        <div class="panel"><div class="panel-head"><div><h2>Resultado de liquidación</h2><p>Valores calculados automáticamente en pesos colombianos.</p></div></div>
+          <div class="results" aria-live="polite">
+            <div class="result-line"><span>Valor aduanero / CIF (USD)</span><strong id="r-cif-usd">US$ 1.150,00</strong></div>
+            <div class="result-line"><span>Valor CIF en pesos</span><strong id="r-cif-cop">$ 4.600.000</strong></div>
+            <div class="result-line"><span>Arancel estimado</span><strong id="r-arancel">$ 460.000</strong></div>
+            <div class="result-line"><span>Base estimada para IVA</span><strong id="r-base">$ 5.060.000</strong></div>
+            <div class="result-line"><span>IVA (19%)</span><strong id="r-iva">$ 961.400</strong></div>
+            <div class="result-total"><div><small>Arancel + IVA estimados</small><div>Tributos calculados</div></div><strong id="r-tributos">$ 1.421.400</strong></div>
+            <div class="result-total" style="background:#1769aa;margin-top:9px"><div><small>CIF + arancel + IVA</small><div>Costo estimado con tributos</div></div><strong id="r-total">$ 6.481.400</strong></div>
+          </div>
+          <p class="hint" style="margin-top:14px">No incluye gastos locales, bodegaje, agencia de aduanas, inspecciones u otros costos no ingresados.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="documentos">
+      <div class="page-head"><div><div class="eyebrow">ARCHIVO DE OPERACIÓN</div><h1>Documentos</h1><p>Revisa los documentos de referencia y adjunta archivos desde tu equipo.</p></div></div>
+      <div class="notice">Los archivos seleccionados solo se muestran en esta sesión del navegador; esta versión no los sube a un servidor ni los comparte con otras personas.</div>
+      <div class="panel"><div class="panel-head"><div><h2>Lista de documentos requeridos</h2><p>Marca los documentos que ya tienes preparados.</p></div><span class="pill" id="doc-progress">0 de 6 listos</span></div><div class="doc-list" id="doc-list"></div></div>
+      <div class="panel"><div class="panel-head"><div><h2>Consulta de inventario</h2><p>Usa este espacio como lista básica de control de mercancía.</p></div></div><div class="form-grid"><div class="field"><label for="inv-ref">Referencia / producto</label><input id="inv-ref" placeholder="Ej. REF-001 / Repuestos"></div><div class="field"><label for="inv-cantidad">Cantidad</label><input id="inv-cantidad" type="number" min="0" placeholder="Ej. 25"></div><div class="field"><label for="inv-notas">Observaciones</label><input id="inv-notas" placeholder="Ubicación, estado, etc."></div><div class="field" style="justify-content:end"><button class="btn btn-primary" id="inv-add">＋ Agregar al inventario</button></div></div><div class="table-wrap" style="margin-top:18px"><table><thead><tr><th>Referencia / producto</th><th>Cantidad</th><th>Observaciones</th><th>Acción</th></tr></thead><tbody id="inv-table"></tbody></table></div></div>
+    </section>
+
+    <section class="section" id="proveedores">
+      <div class="page-head"><div><div class="eyebrow">DIRECTORIO COMERCIAL</div><h1>Proveedores</h1><p>Registra y administra los datos de las empresas proveedoras.</p></div><button class="btn btn-primary" onclick="newSupplier()">＋ Nuevo proveedor</button></div>
+      <div class="panel" id="supplier-form-panel" style="display:none"><div class="panel-head"><div><h2 id="supplier-form-title">Registrar proveedor</h2><p>Completa la información de contacto de la empresa.</p></div><button class="icon-btn" onclick="cancelSupplier()">✕</button></div>
+        <form id="supplier-form"><input type="hidden" id="supplier-id"><div class="form-grid">
+          <div class="field"><label for="empresa">Nombre de la empresa *</label><input id="empresa" required placeholder="Nombre legal o comercial"></div>
+          <div class="field"><label for="pais">País *</label><input id="pais" required placeholder="Ej. China"></div>
+          <div class="field"><label for="ciudad">Ciudad *</label><input id="ciudad" required placeholder="Ej. Shenzhen"></div>
+          <div class="field"><label for="direccion">Dirección *</label><input id="direccion" required placeholder="Dirección de la empresa"></div>
+          <div class="field"><label for="telefono">Número de teléfono *</label><input id="telefono" type="tel" required placeholder="+00 000 000 000"></div>
+          <div class="field"><label for="correo">Correo electrónico *</label><input id="correo" type="email" required placeholder="contacto@empresa.com"></div>
+        </div><div class="form-actions"><button type="button" class="btn btn-light" onclick="cancelSupplier()">Cancelar</button><button class="btn btn-primary" type="submit">Guardar proveedor</button></div></form>
+      </div>
+      <div class="panel"><div class="panel-head"><div><h2>Proveedores registrados</h2><p>Los registros quedan guardados en este navegador.</p></div><div class="search"><input id="supplier-search" placeholder="Buscar empresa, país o ciudad…"></div></div><div class="table-wrap"><table><thead><tr><th>Empresa</th><th>País / ciudad</th><th>Contacto</th><th>Estado</th><th>Acciones</th></tr></thead><tbody id="supplier-table"></tbody></table></div></div>
+    </section>
+  </div>
+</main>
+</div><div class="toast" id="toast" role="status"></div>
+<script src="app.js"></script>
+</body>
+</html>
